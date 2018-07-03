@@ -34,7 +34,7 @@ passwd bob
 
 6) Exit out and try loggin into the EC2 using the password
 ```console
-ssh ec2-user@32.33.34.35 -p
+ssh ec2-user@32.33.34.35 
 ```
 
 **you should now be logged in without using the .pem file**
