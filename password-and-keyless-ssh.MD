@@ -37,8 +37,10 @@ ls
 4) **Optional** Remove the contents of that direcotry. A new file will be added later.
 ```console
 rm *
+ls
 
 ```
+the diretory should be empty now.
 
 5) Exit out of the remote computer 
 ```console
@@ -73,6 +75,18 @@ ssh ec2-user@32.33.34.34
 **congratulations!! you just setup password-less key-less ssh**
 
 
+11) Navigate to the .ssh folder inside EC2 and list its contents
+```console
+cd ~/.ssh
+ls
+```
+12) you should see an authorized_keys file
 
+13) View the contents of that file
+```console
+cat authorized_keys
+```
 
+14) the content of the public key we generated locally  is added to this file
 
+**That's it for this lesson. See you in the next one!**
