@@ -12,6 +12,9 @@ from our local machine and we will be logged into the remote linux machine witho
 https://git-scm.com/downloads \
 Once you download it, open it and all of us should be on the same page.**
 
+## We will look into  2 ways to do this :
+
+## Way 1
 
 ## Steps ( You need to have password authentication enabled on EC2 instances to follow these steps properly. [Click here](https://github.com/ravsau/aws-labs/blob/master/enable-password-ssh.MD) to view the steps if you haven't done that )
 
@@ -88,5 +91,31 @@ cat authorized_keys
 ```
 
 14) the content of the public key we generated locally  is added to this file
+
+---------------------
+
+## Way 2
+
+1) On your local machine open/create the file 
+```console
+vim ~/.ssh/config
+```
+
+2) Paste this config and edit the IP to the IP of your EC2 instance IP and change the location and name of your .pem file
+```vim
+Host ec2
+     HostName 18.206.86.235 
+     User ec2-user
+     IdentityFile ~/cloudform-key.pem
+```
+
+3) ssh into the instance using the Hostname
+
+```
+ssh ec2
+```
+You should be logged in to your ec2 instance.
+
+Easy right?
 
 **That's it for this lesson. See you in the next one!**
