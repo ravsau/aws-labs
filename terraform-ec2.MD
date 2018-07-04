@@ -36,7 +36,7 @@ For Windows users : follow this to add Terraform to PATH https://stackoverflow.c
 mkdir terraform-july && cd terraform-july
 ```
 
-6) Paste this code to a file called ec2.tf( can be anything.tf)
+6) Paste this following code to a file called ec2.tf( can be anything.tf)
 
 #### minimal viable configuration
 
@@ -63,12 +63,15 @@ This is what Hashicorp says "If you simply leave out AWS credentials, Terraform 
 terraform init
 ```
 
+"The terraform init command is used to initialize a working directory containing Terraform configuration files. This is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control. It is safe to run this command multiple times."
+
 8) Provision the ec2 with this command
 ```console
 terraform apply
 ```
 
-9) Check your EC2 console to make sure an instance got provisioned
+9) Login to the AWS management console and navigate to the EC2 management console.  Check if an instance got provisioned
+
 
 10) From your terminal/command prompt/ shell , destory the resources
 ```console
