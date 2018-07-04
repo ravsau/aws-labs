@@ -1,5 +1,8 @@
 In this mini lab/lesson we are going to provision an EC2 using Hashicorps's terraform.
 
+Reference:
+https://www.terraform.io/docs/providers/aws/index.html
+
 ## What is Terraform? 
 
 Terraform is a tool made by Hashicorp for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers ( aws, azure, Google cloud) as well as custom in-house solutions.
