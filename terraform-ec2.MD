@@ -31,7 +31,7 @@ For Windows users : follow this to add Terraform to PATH https://stackoverflow.c
 
 
 
-5) Inside a folder of your choosing( documents, desktop , etc) make a directory and name it something like
+5) make a  new directory(can be named anything) and go inside the directory
 ```console
 mkdir terraform-july && cd terraform-july
 ```
