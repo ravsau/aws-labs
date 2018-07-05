@@ -72,7 +72,7 @@ Either download the csv file or, click show keys. Now you have both the access_k
 If you've setup the AWS CLI and have credentials stored , you may skip the credential portion.
 This is what Hashicorp says "If you simply leave out AWS credentials, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials. This option is much cleaner for situations where tf files are checked into source control"
 
-7) initialize the working dir for terraform
+7) initialize the working directory for terraform
 ```console 
 terraform init
 ```
