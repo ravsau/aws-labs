@@ -55,6 +55,20 @@ resource "aws_instance" "example" {
 
 #### Note:
 
+Replace the access_key and secret_access with your AWS IAM user credentials with enough permissions attached.
+You can go to IAM console on AWS to do this.
+First, go to the IAM management console 
+![iam](https://github.com/ravsau/aws-labs/blob/master/images/iam-console.png)
+
+Then Click on the user's name and navigate to the security credentials tab. Click create access keys
+![iam](https://github.com/ravsau/aws-labs/blob/master/images/generate-access-keys.png)
+
+Either download the csv file or, click show keys. Now you have both the access_key and secret_key required for the terraform code above.
+![iam](https://github.com/ravsau/aws-labs/blob/master/images/iam-generated-keys.png)
+
+
+
+
 If you've setup the AWS CLI and have credentials stored , you may skip the credential portion.
 This is what Hashicorp says "If you simply leave out AWS credentials, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials. This option is much cleaner for situations where tf files are checked into source control"
 
