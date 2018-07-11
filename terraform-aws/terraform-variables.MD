@@ -82,4 +82,4 @@ variable "ec2-key" { default = "my-key"}
 
   
   
-Reference:https://www.terraform.io/intro/getting-started/variables.html
+For more Reference:https://www.terraform.io/intro/getting-started/variables.html
