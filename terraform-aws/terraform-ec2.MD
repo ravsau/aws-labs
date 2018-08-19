@@ -1,3 +1,4 @@
+
 In this mini lab/lesson we are going to provision an EC2 using Hashicorps's terraform.
 
 Reference:
@@ -17,6 +18,11 @@ You can compare **Terraform** to **Cloudformation**
 
 1) Download the terraform binary file 
 https://www.terraform.io/downloads.html
+
+> If MAC users have `homebrew` installed on their machine:
+> Just do: `brew install terraform`
+> Go to step `5`
+
 2) Extract the zip file
 3) You will see the terraform binary executable  file 
 4) make sure that the terraform binary is available on the PATH. 
