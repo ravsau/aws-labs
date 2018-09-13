@@ -1,5 +1,5 @@
 # Lesson about Cloudwatch event pattern
-
+# Youtube link: N/A
 
 ## Requirements
 - IAM Role with SNS and cloudwatch Access 
