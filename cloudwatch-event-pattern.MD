@@ -1,4 +1,6 @@
-# Lesson about Cloudwatch event pattern
+# AWS LAB on Cloudwatch event pattern and Lambda Integration
+
+
 # Youtube link: N/A
 
 ## Requirements
