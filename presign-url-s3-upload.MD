@@ -32,7 +32,12 @@ print(s3.generate_presigned_url('put_object', Params={'Bucket':bucket,'Key':key}
 
 3) On your command line/terminal navigate to the directory/folder where you saved the .py file
 4) Execute the script and enter your bucket name and desired filename/key
-5) You will receive a pre-signed url
+```
+python presign.py
+```
+![image](https://user-images.githubusercontent.com/22568316/46574218-fb53ee00-c96d-11e8-8858-994e54e8b4d2.png)
+
+5) You will receive a pre-signed url as seen above. Copy that to the clipboard
 6) On your command Line use curl to upload any file to S3 using Pre-signed URL
 ```
 curl --request PUT --upload-file text.txt http://your-pre-signed-url.com
