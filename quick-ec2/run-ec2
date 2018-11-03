@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Enter the name of the EC2 key you want to use without the .pem extension
+key=MyKeyPair1
+
+# Enter the name of the AMI you want to use. The AMI below works only on us-east-1
+ami=ami-55ef662f
+
+Id=$(aws ec2 run-instances --image-id $ami --instance-type t2.micro --key-name $key --query Instances[].InstanceId --output text )
+IP=$(aws ec2 describe-instances --instance-id $Id --query 'Reservations[].Instances[].PublicIpAddress' --output text)
+
+# Change the user-name if you use an AMI with a different username than ec2-user
+echo "Use this to login: ssh -i ${key}.pem  ec2-user@$IP"
