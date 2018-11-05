@@ -1,3 +1,4 @@
+## Steps to enable password authentication and set password for first login on EC2
 Paste this script to your EC2 userdata during launch to enable password ssh for your first login. Change user and pass by changing lines under TODO in the below script.
 
 ```
@@ -8,7 +9,7 @@ service sshd restart
 
 #TODO: replace bob with your desired username
 useradd bob
-# TODO: replace password123 with desired passowrd and change bob to your username chosen in useradd 
+# TODO: replace password123 with desired password and change bob to your username chosen in useradd 
 echo "password123" | passwd --stdin bob
 ```
 
