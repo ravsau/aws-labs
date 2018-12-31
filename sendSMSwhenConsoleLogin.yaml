@@ -1,0 +1,69 @@
+﻿AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+
+Parameters:
+  SNSEmailParameter:
+    Type: String
+    Description: Enter the email address of the notification receipient
+
+Resources:
+  ## TODO Create Role with just enough permissions
+
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: "/"
+      Policies:
+      - PolicyName: root
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - logs:*
+            Resource: arn:aws:logs:*:*:*
+          - Effect: Allow
+            Action:
+            - sns:*
+            Resource: '*'
+
+
+  # TODO ADD SNS SUBSCRIBTION WITH A PARAMETER
+  MySNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription:
+      - Endpoint: !Ref SNSEmailParameter
+        Protocol: email
+
+
+  sendSMSwhenConsoleLogin:
+      Type: 'AWS::Serverless::Function'
+      Properties:
+        Handler: lambda_function.lambda_handler
+        Runtime: python3.6
+        CodeUri: .
+        Description: ''
+        MemorySize: 128
+        Timeout: 3
+        Role: !GetAtt LambdaExecutionRole.Arn
+        Events:
+          CloudWatchEvent1:
+            Type: CloudWatchEvent
+            Properties:
+              Pattern:
+                detail-type:
+                  - AWS Console Sign In via CloudTrail
+        Environment:
+          Variables:
+            TOPIC: !Ref MySNSTopic

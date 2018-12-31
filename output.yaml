@@ -1,0 +1,65 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: An AWS Serverless Specification template describing your function.
+Parameters:
+  SNSEmailParameter:
+    Description: Enter the email address of the notification receipient
+    Type: String
+Resources:
+  LambdaExecutionRole:
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+        - Action:
+          - sts:AssumeRole
+          Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+        Version: '2012-10-17'
+      Path: /
+      Policies:
+      - PolicyDocument:
+          Statement:
+          - Action:
+            - logs:*
+            Effect: Allow
+            Resource: arn:aws:logs:*:*:*
+          - Action:
+            - sns:*
+            Effect: Allow
+            Resource: '*'
+          Version: '2012-10-17'
+        PolicyName: root
+    Type: AWS::IAM::Role
+  MySNSTopic:
+    Properties:
+      Subscription:
+      - Endpoint:
+          Ref: SNSEmailParameter
+        Protocol: email
+    Type: AWS::SNS::Topic
+  sendSMSwhenConsoleLogin:
+    Properties:
+      CodeUri: s3://lambda-code-sam/587509d78cab631dfde6827da48ba74a
+      Description: ''
+      Environment:
+        Variables:
+          TOPIC:
+            Ref: MySNSTopic
+      Events:
+        CloudWatchEvent1:
+          Properties:
+            Pattern:
+              detail-type:
+              - AWS Console Sign In via CloudTrail
+          Type: CloudWatchEvent
+      Handler: lambda_function.lambda_handler
+      MemorySize: 128
+      Role:
+        Fn::GetAtt:
+        - LambdaExecutionRole
+        - Arn
+      Runtime: python3.6
+      Timeout: 3
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31
