@@ -1,5 +1,5 @@
-In the [last lesson/lab ](terraform-aws/lesson1-ec2-with-terraform.MD), we launched a basic EC2 instance with terraform. 
-In this lab, we will launch linux EC2 instance and ssh, and then launch a windows EC2 instane and RDP into it. Please go to  [last lesson/lab ](terraform-aws/lesson1-ec2-with-terraform.MD) if you haven't gone throught it . We introduce terraform in that lesosn. 
+In the [last lesson/lab ](lesson1-ec2-with-terraform.MD), we launched a basic EC2 instance with terraform. 
+In this lab, we will launch linux EC2 instance and ssh, and then launch a windows EC2 instane and RDP into it. Please go to  [last lesson/lab ](lesson1-ec2-with-terraform.MD) if you haven't gone throught it . We introduce terraform in that lesosn. 
 
 
 
