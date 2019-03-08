@@ -45,7 +45,23 @@ resource "aws_security_group" "allow_rdp" {
 
 ```
 
-3) 
+3) After you create the windows.tf file. Save it .Make sure you have AWS your Credentials entered properly.  Then use this command to launch the terraform stack 
+```
+terraform apply --auto-approve 
+```
+
+Auto approve flag skips the yes/no question whether if you want to create the stack or not. 
+
+4) Go to your AWS Management Console. An EC2 should be spinning up. Wait 5 minutes( Windows instaces take around 5 mins to get ready) . Then select the EC2 Instance and click on connect. 
+- Click Decrypt passoword. 
+- Choose your .pem file you downloaded earlier and upload it to decrypt the password
+- Once you get the password , download the RDP file
+- Open the downloaded RDP file. You will be asked for the pasword when Windows Remote desktop opens. Supply the pass. Note: If you don't have Remote Desktop Installed, you many need to install it. 
+
+![key](../images/decrypt-pass.png)
+![key](../images/windows.png)
+
+5) You should be logged in now. 
 
 
 
