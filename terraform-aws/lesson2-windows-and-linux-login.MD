@@ -63,6 +63,16 @@ Auto approve flag skips the yes/no question whether if you want to create the st
 
 5) You should be logged in now. 
 
+6) In our configuration file , let's change the AMI to a Linux AMI, and add port 22 on our SG instead of 3389. Then initialize the terraform working directory again and apply the configuration. 
+7) This should delete the windows instance and create a Linux instance. 
+8) Let's verify that the linux windows is running. Then let's SSH into the linux instance. 
+
+
+
+
+
+
+
 
 
 ## New Concepts introduced
