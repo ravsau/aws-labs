@@ -42,7 +42,7 @@ resource "aws_security_group" "allow_rdp" {
 
     cidr_blocks =  ["0.0.0.0/0"]
   }
-
+}
 ```
 
 3) After you create the windows.tf file. Save it .Make sure you have AWS your Credentials entered properly.  Then use this command to launch the terraform stack 
