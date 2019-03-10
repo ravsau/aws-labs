@@ -65,7 +65,7 @@ Auto approve flag skips the yes/no question whether if you want to create the st
 
 6) Let's destroy the AWS resources with the following command
 ```
-terraform destory
+terraform destroy
 ```
 
 
