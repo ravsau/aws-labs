@@ -1,14 +1,14 @@
 ## Note
-Terraform v0.12 is about to be released soon. What we mention in this lesson may change with the new release as terraorm docs mention this. 
->Terraform v0.12 will be a major release focused on configuration language improvements and thus will include some changes that you'll need to consider when upgrading. 
+Terraform v0.12 is about to be released soon. What we mention in this lesson may change with the new release as terraorm docs mention this.
+>Terraform v0.12 will be a major release focused on configuration language improvements and thus will include some changes that you'll need to consider when upgrading.
 
-## Terraform working direcotory and the root module: how to break up configuration files ( templates) 
+## Terraform working direcotory and the root module: how to break up configuration files ( templates)
 A module is a container for multiple resources that are used together.
 
 Every Terraform configuration has at least one module, known as its root module, which consists of the resources defined in the .tf files in the main working directory.
 
 
-In the previous lessons, we had only one .tf file in the working directory when we called the terraform apply command. 
+In the previous lessons, we had only one .tf file in the working directory when we called the terraform apply command.
 
 
 ## Instead of having one .tf file that contains everything, we can break the resource blocks into multiple .tf files. When you call the terrform apply command, terraform applies code in all the .tf files in the working direcotory.
@@ -47,9 +47,9 @@ resource "aws_security_group" "allow_rdp" {
 ```
 
 
-We can break these blocks into multiple files. 
+We can break these blocks into multiple files.
 
-First, let's put the provider into a single **provider.tf** file 
+First, let's put the provider into a single **provider.tf** file
 ```
 provider "aws" {
   access_key = "ACCESS_KEY_HERE"
@@ -70,7 +70,7 @@ resource "aws_instance" "example" {
 }
 ```
 
-And finally, the security group in a seperate file **sg.tf**, 
+And finally, the security group in a seperate file **sg.tf**,
 ```
 resource "aws_security_group" "allow_rdp" {
   name        = "allow_rdp"
@@ -93,17 +93,19 @@ When you call this command in the working directory with these 3 .tf files
 terraform apply
 ```
 
-Terraform combines code in all 3 .tf files and applies the changes. 
+**NOTE:you need to setup your keys in provider.tf and have a ec2 keypair with terraform-key to make this work. If you followed lesson 1 and 2 , you should be good.**
 
-This let's you break your infrastructure code into multiple files which provides multiple benefits. 
+Terraform combines code in all 3 .tf files and applies the changes.
+
+This let's you break your infrastructure code into multiple files which provides multiple benefits.
 
   - you can put a certain file like provider.tf in gitignore so that you don't commit the provider settings to version control like github
-  - Multiple files are easier to work with. 
-  - Compare this to cloudformation, where you have to use concept of nested stack , terraforms' approach looks much cleaner. 
-  
+  - Multiple files are easier to work with.
+  - Compare this to cloudformation, where you have to use concept of nested stack , terraforms' approach looks much cleaner.
 
 
-That's all for this lesson. See you in the next one. 
+
+That's all for this lesson. See you in the next one.
 
 
 
