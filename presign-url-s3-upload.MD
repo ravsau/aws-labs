@@ -19,6 +19,7 @@ s3 = boto3.client(
    's3',
    aws_access_key_id='AKIAIO5FODNN7EXAMPLE',
    aws_secret_access_key='ABCDEF+c2L7yXeGvUyrPgYsDnWRRC1AYEXAMPLE'
+   config=Config(signature_version='s3v4'
 ) 
 """
 
