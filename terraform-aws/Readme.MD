@@ -35,7 +35,7 @@ For Windows users : follow this to add Terraform to PATH https://stackoverflow.c
 > If Windows users have `chocolatey` installed on their machine:
 > Just do: `choco install -y terraform`
 > Go to step `5`
-
+> [Click here](https://chocolatey.org/docs/installation) for instructions to install `chocolatey`.
 
 5) make a  new directory(can be named anything) and go inside the directory
 ```console
