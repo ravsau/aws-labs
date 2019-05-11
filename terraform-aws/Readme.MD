@@ -11,9 +11,6 @@ Terraform is a tool made by Hashicorp for building, changing, and versioning inf
 You can compare **Terraform** to **Cloudformation**
 . They are simililar but at the same time have differences.
 
-
-
-
 ### Steps to provision
 
 1) Download the terraform binary file 
@@ -35,6 +32,9 @@ source ~/.bash_profile
 
 For Windows users : follow this to add Terraform to PATH https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows
 
+> If Windows users have `chocolatey` installed on their machine:
+> Just do: `choco install -y terraform`
+> Go to step `5`
 
 
 5) make a  new directory(can be named anything) and go inside the directory
