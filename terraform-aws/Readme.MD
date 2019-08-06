@@ -90,10 +90,10 @@ terraform init
 terraform apply
 ```
 
-9) Login to the AWS management console and navigate to the EC2 management console.  Check if an instance got provisioned
+9) Login to the AWS management console and navigate to the EC2 management console.  Check if the instance got provisioned
 
 
-10) From your terminal/command prompt/ shell , destory the resources
+10) From your terminal/command prompt/ shell , destroy the resources
 ```console
 terraform destroy
 ```
