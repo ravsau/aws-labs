@@ -11,7 +11,7 @@ Every Terraform configuration has at least one module, known as its root module,
 In the previous lessons, we had only one .tf file in the working directory when we called the terraform apply command.
 
 
-## Instead of having one .tf file that contains everything, we can break the resource blocks into multiple .tf files. When you call the terrform apply command, terraform applies code in all the .tf files in the working direcotory.
+## Instead of having one .tf file that contains everything, we can break the resource blocks into multiple .tf files. When you call the terrform apply command, terraform applies code in all the .tf files in the working directory.
 
 For example, instead of having this in ec2.tf file where provider block is included with the ec2 resource block:
 ```

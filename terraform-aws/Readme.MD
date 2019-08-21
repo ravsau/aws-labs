@@ -11,9 +11,6 @@ Terraform is a tool made by Hashicorp for building, changing, and versioning inf
 You can compare **Terraform** to **Cloudformation**
 . They are simililar but at the same time have differences.
 
-
-
-
 ### Steps to provision
 
 1) Download the terraform binary file 
@@ -35,7 +32,10 @@ source ~/.bash_profile
 
 For Windows users : follow this to add Terraform to PATH https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows
 
-
+> If Windows users have `chocolatey` installed on their machine:
+> Just do: `choco install -y terraform`
+> Go to step `5`
+> [Click here](https://chocolatey.org/docs/installation) for instructions to install `chocolatey`.
 
 5) make a  new directory(can be named anything) and go inside the directory
 ```console
@@ -90,10 +90,10 @@ terraform init
 terraform apply
 ```
 
-9) Login to the AWS management console and navigate to the EC2 management console.  Check if an instance got provisioned
+9) Login to the AWS management console and navigate to the EC2 management console.  Check if the instance got provisioned
 
 
-10) From your terminal/command prompt/ shell , destory the resources
+10) From your terminal/command prompt/ shell , destroy the resources
 ```console
 terraform destroy
 ```
