@@ -54,19 +54,13 @@ aws configure
 
 > Need an AWS CLI course? [AWS CLI Course on Udemy](https://www.udemy.com/course/aws-cli-course/?referralCode=16426B3D9228F18FD52A)
 
-### 2. Bedrock Model Access
-
-Enable Claude Haiku in the Bedrock console for your region (one-time, approval is instant):
-
-```
-https://console.aws.amazon.com/bedrock/home?region=us-west-2#/modelaccess
-```
-
-Request access to **Anthropic > Claude Haiku 4.5**.
-
-### 3. SSM Session Manager Plugin
+### 2. SSM Session Manager Plugin
 
 Installed in Step 1 below.
+
+> **Note on Bedrock models:** You do NOT need to manually enable Claude Haiku.
+> Bedrock models are now auto-enabled on first invoke. The CloudFormation template
+> creates an IAM role with the right permissions — it just works.
 
 ---
 
