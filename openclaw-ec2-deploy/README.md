@@ -15,19 +15,58 @@ Slack. Browses the web, runs code, manages tasks.
 
 ## Prerequisites
 
-1. AWS CLI v2 installed and configured (`aws configure`)
-2. An AWS account with Bedrock model access enabled
-3. SSM Session Manager plugin (installed in Step 1 below)
+### 1. AWS CLI v2
 
-### Enable Bedrock Models (one-time)
+You need the AWS CLI installed and configured. If you already have it, skip ahead.
 
-Before deploying, enable Claude Haiku in the Bedrock console for your region:
+**Check if installed:**
+```bash
+aws --version
+```
+
+**Install (if needed):**
+
+macOS:
+```bash
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+rm AWSCLIV2.pkg
+```
+
+Linux:
+```bash
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+rm -rf aws awscliv2.zip
+```
+
+Windows:
+```
+Download and run: https://awscli.amazonaws.com/AWSCLIV2.msi
+```
+
+**Configure:**
+```bash
+aws configure
+# Enter your Access Key ID, Secret Access Key, region (us-west-2), output format (json)
+```
+
+> Need an AWS CLI course? [AWS CLI Course on Udemy](https://www.udemy.com/course/aws-cli-course/?referralCode=16426B3D9228F18FD52A)
+
+### 2. Bedrock Model Access
+
+Enable Claude Haiku in the Bedrock console for your region (one-time, approval is instant):
 
 ```
 https://console.aws.amazon.com/bedrock/home?region=us-west-2#/modelaccess
 ```
 
-Request access to **Anthropic > Claude Haiku 4.5**. Approval is instant.
+Request access to **Anthropic > Claude Haiku 4.5**.
+
+### 3. SSM Session Manager Plugin
+
+Installed in Step 1 below.
 
 ---
 
