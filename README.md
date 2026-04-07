@@ -13,6 +13,14 @@ Simplified, step-by-step AWS and related labs.
 
 ---
 
+## Labs
+
+| Lab | What You Build | Cost |
+|-----|---------------|------|
+| [OpenClaw on EC2 — CLI-Only Deploy](openclaw-ec2-deploy/) | Your own AI assistant on AWS. 5 CLI commands, no console, no key pairs. | ~$15/mo |
+
+---
+
 ## 📺 CloudYeti YouTube Channel (AWS Labs)
 
 - [AWS LABS Playlist (33+ Videos)](https://www.youtube.com/playlist?list=PLQP5dDPLts64M0nMnvHJ6qmbYUhHPlcc0)  
