@@ -31,9 +31,33 @@ Request access to **Anthropic > Claude Haiku 4.5**. Approval is instant.
 
 ---
 
+## How We Connect: SSM Session Manager (No SSH, No Key Pairs)
+
+Traditional EC2 access means opening port 22, creating a key pair, and managing SSH.
+This lab uses none of that. Instead we use **AWS Systems Manager Session Manager**.
+
+**How it works:**
+- The EC2 instance runs an SSM Agent (pre-installed on Amazon Linux and Ubuntu AMIs)
+- The agent phones home to the SSM service over HTTPS (outbound only — no inbound ports needed)
+- When you run `aws ssm start-session`, AWS creates an encrypted WebSocket tunnel between your machine and the instance
+- Authentication is your IAM credentials — the same `aws configure` you already set up
+- Every session is logged in CloudTrail (who connected, when, what they did)
+
+**Why this is better than SSH:**
+- No port 22 open in security groups (zero attack surface)
+- No key pairs to create, rotate, or accidentally commit to GitHub
+- No bastion hosts or VPNs needed
+- Works even if the instance is in a private subnet with no public IP
+- Port forwarding works too — that's how we access the OpenClaw web UI on localhost
+
+The SSM plugin on your laptop is just a thin client that handles the WebSocket connection.
+Install it once, use it for any EC2 instance going forward.
+
+---
+
 ## Step 1: Install SSM Session Manager Plugin
 
-This lets you tunnel into EC2 without SSH or key pairs. One-time install.
+One-time install. This is the client-side piece that lets your terminal talk to SSM.
 
 **macOS:**
 ```bash
